@@ -1,8 +1,9 @@
 import React from 'react'
+import { useSelector, useDispatch } from 'react-redux'
 import { makeStyles, Card, CardActionArea, CardActions, CardContent, CardMedia, Button, Typography, GridList, GridListTile } from '@material-ui/core';
-import { useSelector } from 'react-redux'
+import { addItem } from '../store/cart.js'
 
-// Redux Styling For Cards
+// Redux Styling
 const useStyles = makeStyles((theme) => ({
   root: {
     maxWidth: 345,
@@ -17,22 +18,25 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     flexWrap: 'wrap',
     justifyContent: 'space-around',
-    overflow: 'hidden',
-    backgroundColor: theme.palette.background.paper,
     marginBottom: '8rem'
   }
 }))
 
 function ItemCard() {
+  const dispatch = useDispatch()
   const classes = useStyles();
   const items = useSelector((state) => state.inventory.inventory)
 
+  function add(item) {
+    dispatch(addItem(item))
+  }
+
   return (
     <div className={classes.grid}>
-      <GridList cellHeight="auto" cols={items.length >= 3 ? 3 : 2} aria-label="list">
+      <GridList cellHeight="auto" cols={3} aria-label="list">
         {
           items && items.map(item =>
-            <GridListTile  key={item._id} aria-label="list-item">
+            <GridListTile key={item._id} aria-label="list-item">
               <Card className={classes.root}>
                 <CardActionArea >
                   <CardMedia
@@ -47,7 +51,7 @@ function ItemCard() {
                   </CardContent>
                 </CardActionArea>
                 <CardActions>
-                  <Button size="small" color="primary">
+                  <Button onClick={() => add(item)} size="small" color="primary">
                     Add to Cart
           </Button>
                   <Button size="small" color="primary">

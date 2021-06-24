@@ -9,11 +9,20 @@ function ThemeSettings(props) {
     marginBottom: '1.5rem'
   }
   
+
+  
   const [themeSettings] = useState(pageStyles);
+  const [showCart, setShowList] = useState('hidden');
+
+  const contents = {
+    themeSettings,
+    showCart,
+    setShowList
+  }
 
   return (
     <>
-      <ThemeContext.Provider value={themeSettings}>
+      <ThemeContext.Provider value={contents}>
         {props.children}
       </ThemeContext.Provider>
     </>

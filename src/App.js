@@ -1,4 +1,5 @@
 import { Provider } from 'react-redux'
+import Cart from './components/Cart.js'
 import Header from './components/Header.js'
 import Footer from './components/Footer.js'
 import ItemCard from './components/Products.js'
@@ -12,6 +13,7 @@ function App() {
     <ThemeContext>
       <Provider store={store}>
         <Header />
+        <Cart />
         <Categories />
         <CategoryBanner />
         <ItemCard />

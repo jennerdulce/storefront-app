@@ -19,7 +19,6 @@ function Categories() {
   const dispatch = useDispatch();
 
   function change(payload) {
-    console.log('THIS IS BEING CHANGED', payload)
     dispatch(changeCategory(payload))
   }
 
@@ -28,8 +27,6 @@ function Categories() {
       .then(res => {
         axios.get('https://storefront-db.herokuapp.com/api/v1/food')
           .then(resTwo => {
-            console.log('RES============= ', res.data)
-            console.log('RESTWO============= ', resTwo.data)
             dispatch(updateList([...res.data, ...resTwo.data]))
           })
       })
