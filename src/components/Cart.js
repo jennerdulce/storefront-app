@@ -41,8 +41,8 @@ function Cart() {
     <div>
       <List className={classes.list} style={cartVisbilty[styles.showCart]} >
         {
-          cartItems.map(item =>
-            <ListItem ket={item._id} className={classes.listItem}>
+          cartItems.map((item, idx) =>
+            <ListItem key={idx} className={classes.listItem}>
               <ListItemText
                 primary={item.item}
               />
