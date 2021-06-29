@@ -8,7 +8,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Problem Domain
 
-### LAB 36
+### LAB 36 - Application State with Redux
 
 - The following user/developer stories detail the major functionality for this phase of the project.
 
@@ -23,12 +23,18 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
   - Identify that category as selected (change of class/display)
   - Show a list of products associated with the category
 
-### LAB 37
+### LAB 37 - Combined Reducers
 
 - As a user, I want to choose from products in the list and add them to my shopping cart
 - As a user, I want to see the products that I’ve added to my shopping cart so that
 - As a user, I want to change the quantity of items I intend to purchase in my shopping cart
 - As a user, I want to be able to remove an item from my shopping cart
+
+### LAB 38 - Asynchronous Actions
+
+- Connect the Virtual Store to an API to retrieve live data from your data source, using thunk to enable asynchronous actions
+- As a user, I want to interact with live inventory so that I have confidence that the displayed products are in stock
+- As a user, I want to know to that when I add an item to my cart, that it is removed from inventory so that no other users can purchase it
 
 ### Required Node Packages
 
