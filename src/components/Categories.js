@@ -18,22 +18,16 @@ function Categories() {
   const classes = useStyles()
   const dispatch = useDispatch();
 
-  function change(payload) {
+  async function change(payload) {
     dispatch(changeCategory(payload))
   }
 
-  async function fetch() {
-    axios.get('https://storefront-db.herokuapp.com/api/v1/electronics')
-      .then(res => {
-        axios.get('https://storefront-db.herokuapp.com/api/v1/food')
-          .then(resTwo => {
-            dispatch(updateList([...res.data, ...resTwo.data]))
-          })
-      })
+  async function getData(payload) {
+    dispatch(updateList())
   }
 
   useEffect(() => {
-    fetch()
+    getData()
   }, [])
 
   return (

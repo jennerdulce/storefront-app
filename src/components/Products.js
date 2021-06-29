@@ -1,7 +1,7 @@
 import React from 'react'
-import { useSelector, useDispatch } from 'react-redux'
+import { useSelector, useDispatch, connect } from 'react-redux'
 import { makeStyles, Card, CardActionArea, CardActions, CardContent, CardMedia, Button, Typography, GridList, GridListTile } from '@material-ui/core';
-import { addItem } from '../store/cart.js'
+import { addItem } from '../store/inventory.js'
 
 // Redux Styling
 const useStyles = makeStyles((theme) => ({
@@ -27,7 +27,7 @@ function ItemCard() {
   const classes = useStyles();
   const items = useSelector((state) => state.inventory.inventory)
 
-  function add(item) {
+  async function add(item) {
     dispatch(addItem(item))
   }
 
@@ -37,6 +37,7 @@ function ItemCard() {
         {
           items && items.map(item =>
             <GridListTile key={item._id} aria-label="list-item">
+              <div>Stock {item.stock}</div>
               <Card className={classes.root}>
                 <CardActionArea >
                   <CardMedia
@@ -67,4 +68,4 @@ function ItemCard() {
   )
 }
 
-export default ItemCard
+export default ItemCard;

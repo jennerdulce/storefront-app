@@ -17,13 +17,6 @@ export default function reducer(state = initialState, action) {
 }
 
 // Action Creators
-export const addItem = (item) => {
-  return {
-    type: "ADD",
-    payload: item
-  }
-}
-
 export const removeItem = (item) => {
   console.log('FOLLOWING ITEM DELETED: \n', item)
   return {
