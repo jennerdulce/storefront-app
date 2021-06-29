@@ -67,4 +67,4 @@ function ItemCard() {
   )
 }
 
-export default ItemCard
+export default ItemCard;

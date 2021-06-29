@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import axios from 'axios'
 import { useDispatch } from 'react-redux';
 import { changeCategory, updateList } from '../store/inventory.js';
-import { AppBar, Toolbar, Typography, Button, makeStyles } from '@material-ui/core';
+import { Typography, Button, makeStyles } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -16,6 +16,8 @@ const useStyles = makeStyles((theme) => ({
 
 function Categories() {
   const classes = useStyles()
+
+  // Allows us to dispatch an action to the store
   const dispatch = useDispatch();
 
   function change(payload) {
