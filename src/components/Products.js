@@ -1,5 +1,6 @@
 import React from 'react'
-import { useSelector, useDispatch, connect } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
+import { Link } from 'react-router-dom'
 import { makeStyles, Card, CardActionArea, CardActions, CardContent, CardMedia, Button, Typography, GridList, GridListTile } from '@material-ui/core';
 import { addItem } from '../store/inventory.js'
 
@@ -19,6 +20,9 @@ const useStyles = makeStyles((theme) => ({
     flexWrap: 'wrap',
     justifyContent: 'space-around',
     marginBottom: '8rem'
+  },
+  link: {
+    textDecoration: 'none'
   }
 }))
 
@@ -29,6 +33,12 @@ function ItemCard() {
 
   async function add(item) {
     dispatch(addItem(item))
+  }
+
+  function qualityOfLife(){
+    // Will be passing in object through here
+    // Set state of current item
+    console.log('BUTTON STILL WORKS')
   }
 
   return (
@@ -55,9 +65,9 @@ function ItemCard() {
                   <Button onClick={() => add(item)} size="small" color="primary">
                     Add to Cart
           </Button>
-                  <Button size="small" color="primary">
-                    View Details
-          </Button>
+                  <Link className={classes.link} to='/details'>
+                    <Button onClick={() => qualityOfLife()} size="small" color="primary">View Details</Button>
+                  </Link>
                 </CardActions>
               </Card>
             </GridListTile>
@@ -67,5 +77,7 @@ function ItemCard() {
     </div>
   )
 }
+// ADD TO VIEW DETAILS BUTTON
+// <Link to='/details'> wrap contents </Link>
 
 export default ItemCard;
