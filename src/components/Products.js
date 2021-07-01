@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { makeStyles, Card, CardActionArea, CardActions, CardContent, CardMedia, Button, Typography, GridList, GridListTile } from '@material-ui/core';
 import { addItem } from '../store/inventory.js'
+import { changeCurrentProduct } from '../store/currentProduct.js'
 
 // Redux Styling
 const useStyles = makeStyles((theme) => ({
@@ -35,11 +36,15 @@ function ItemCard() {
     dispatch(addItem(item))
   }
 
-  function qualityOfLife(){
-    // Will be passing in object through here
-    // Set state of current item
-    console.log('BUTTON STILL WORKS')
+  function changeProduct(item) {
+    dispatch(changeCurrentProduct(item))
   }
+
+  // function qualityOfLife() {
+  //   // Will be passing in object through here
+  //   // Set state of current item
+  //   console.log('BUTTON STILL WORKS')
+  // }
 
   return (
     <div className={classes.grid}>
@@ -47,7 +52,6 @@ function ItemCard() {
         {
           items && items.map(item =>
             <GridListTile key={item._id} aria-label="list-item">
-              <div>Stock {item.stock}</div>
               <Card className={classes.root}>
                 <CardActionArea >
                   <CardMedia
@@ -66,7 +70,7 @@ function ItemCard() {
                     Add to Cart
           </Button>
                   <Link className={classes.link} to='/details'>
-                    <Button onClick={() => qualityOfLife()} size="small" color="primary">View Details</Button>
+                    <Button onClick={() => changeProduct(item)} size="small" color="primary">View Details</Button>
                   </Link>
                 </CardActions>
               </Card>
@@ -77,7 +81,5 @@ function ItemCard() {
     </div>
   )
 }
-// ADD TO VIEW DETAILS BUTTON
-// <Link to='/details'> wrap contents </Link>
 
 export default ItemCard;
