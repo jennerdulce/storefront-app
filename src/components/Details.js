@@ -1,26 +1,34 @@
 import React from 'react'
-import { Typography, makeStyles, Card, CardActionArea, CardActions, CardContent, CardMedia, Grid, Button } from '@material-ui/core'
+import { Typography, makeStyles, Card, CardActionArea, CardContent, CardMedia, Grid, Button, Accordion, AccordionSummary, AccordionDetails} from '@material-ui/core'
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
-
-const useStyles = makeStyles({
+const useStyles = makeStyles(theme => ({
   root: {
     width: '100%'
   },
   header: {
     textAlign: 'center',
-    marginTop: '10rem'
+    marginTop: '3rem'
   },
   description: {
     textAlign: 'center',
-    color: '#B8B8B8'
+    color: '#B8B8B8',
+    marginBottom: '6rem'
   },
-  mediaRoot: {
+  mediaWidth: {
     width: 650,
   },
   media: {
     height: 500,
+  },
+  heading: {
+    fontSize: theme.typography.pxToRem(15),
+    fontWeight: theme.typography.fontWeightRegular,
+  },
+  button: {
+    marginTop: '3rem'
   }
-});
+}));
 
 function Details() {
   // const category = useSelector((state) => state.inventory.currentSort)
@@ -36,14 +44,13 @@ function Details() {
       </Typography>
       <Grid
         container
-        spacing={3}
+        spacing={1}
         direction="column"
         alignItems="center"
         justify="space-around"
-        style={{ minHeight: '75vh' }}
       >
         <Card
-          className={classes.mediaRoot}>
+          className={classes.mediaWidth}>
           <CardActionArea>
             <CardMedia
               className={classes.media}
@@ -67,14 +74,14 @@ function Details() {
             </CardContent>
           </CardActionArea>
         </Card>
-        <Button style={{ width: 650 }} variant="contained" color="primary">
-          Primary
+        <Button className={classes.button} style={{ width: 650 }} variant="contained" color="primary">
+          Add to Cart
         </Button>
         <Typography className={classes.header} variant="h5" gutterBottom>
-          <h3>Related Items</h3>
+          <h3 style={{textAlign: 'left'}}>Related Items</h3>
         </Typography>
         <Grid
-          className={classes.mediaRoot}
+          className={classes.mediaWidth}
           container
           direction="row"
           justify="space-between"
@@ -90,7 +97,37 @@ function Details() {
           </Grid>
         </Grid>
         <Typography className={classes.header} variant="h5" gutterBottom>
-          <h3>Product Details</h3>
+          <h3 style={{textAlign: 'left'}}>Product Details</h3>
+          <Accordion className={classes.mediaWidth}>
+            <AccordionSummary
+              expandIcon={<ExpandMoreIcon />}
+              aria-controls="panel1a-content"
+              id="panel1a-header"
+            >
+              <Typography className={classes.heading}>Specifications</Typography>
+            </AccordionSummary>
+            <AccordionDetails>
+              <Typography>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex,
+                sit amet blandit leo lobortis eget.
+          </Typography>
+            </AccordionDetails>
+          </Accordion>
+          <Accordion className={classes.mediaWidth}>
+            <AccordionSummary
+              expandIcon={<ExpandMoreIcon />}
+              aria-controls="panel1a-content"
+              id="panel1a-header"
+            >
+              <Typography className={classes.heading}>User Reviews</Typography>
+            </AccordionSummary>
+            <AccordionDetails>
+              <Typography>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex,
+                sit amet blandit leo lobortis eget.
+          </Typography>
+            </AccordionDetails>
+          </Accordion>
         </Typography>
       </Grid>
     </div >
