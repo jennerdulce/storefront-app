@@ -9,6 +9,9 @@ const useStyles = makeStyles((theme) => ({
     paddingBottom: '4rem',
     background: '#D2D2D2'
   },
+  container: {
+    marginTop: '4rem'
+  },
   top: {
     color: 'black'
   },
@@ -22,7 +25,7 @@ function Footer() {
   let classes = useStyles()
 
   return (
-    <AppBar position="static">
+    <AppBar className={classes.container} position="static">
       <Toolbar className={classes.root}>
         <Typography className={classes.top} variant="h6" >
           &copy; 2020 Jenner Dulce 401
