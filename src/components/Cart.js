@@ -18,20 +18,21 @@ const useStyles = makeStyles(() => ({
   }
 }))
 
-const cartVisbilty = {
-  show: {
-    visibility: 'visible'
-  },
-  hidden: {
-    visibility: 'hidden'
-  },
-}
+// To hide / display cart list
+// const cartVisbilty = {
+//   show: {
+//     visibility: 'visible'
+//   },
+//   hidden: {
+//     visibility: 'hidden'
+//   },
+// }
 
 function Cart() {
   const dispatch = useDispatch();
   const classes = useStyles()
   const cartItems = useSelector((state) => state.cart)
-  const styles = useContext(ThemeContext)
+  // const styles = useContext(ThemeContext)
 
   function remove(item) {
     dispatch(removeItem(item))
@@ -39,7 +40,7 @@ function Cart() {
 
   return (
     <div>
-      <List className={classes.list} style={cartVisbilty[styles.showCart]} >
+      <List className={classes.list}>
         {
           cartItems.map((item, idx) =>
             <ListItem key={idx} className={classes.listItem}>
@@ -57,4 +58,17 @@ function Cart() {
     </div>
   )
 }
+
+// const styles = useContext(ThemeContext)
+{/* <List className={classes.list} style={cartVisbilty[styles.showCart} ></List> */}
+// To hide / display cart list
+// const cartVisbilty = {
+//   show: {
+//     visibility: 'visible'
+//   },
+//   hidden: {
+//     visibility: 'hidden'
+//   },
+// }
+
 export default Cart

@@ -1,5 +1,8 @@
 import { Provider } from 'react-redux'
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import Cart from './components/Cart.js'
+import Details from './components/Details.js'
+import Checkout from './components/Checkout.js'
 import Header from './components/Header.js'
 import Footer from './components/Footer.js'
 import ItemCard from './components/Products.js'
@@ -10,16 +13,26 @@ import store from './store'
 
 function App() {
   return (
-    <ThemeContext>
-      <Provider store={store}>
-        <Header />
-        <Cart />
-        <Categories />
-        <CategoryBanner />
-        <ItemCard />
-        <Footer />
-      </Provider>
-    </ThemeContext>
+    <Router>
+      <ThemeContext>
+        <Provider store={store}>
+          <Header />
+          <Cart />
+          <Route exact path="/">
+          <Categories />
+          <CategoryBanner />
+          <ItemCard />
+          </Route>
+          <Route exact path="/details">
+            <Details />
+          </Route>
+          <Route exact path="/checkout">
+            <Checkout />
+          </Route>
+          <Footer />
+        </Provider>
+      </ThemeContext>
+    </Router>
   );
 }
 
