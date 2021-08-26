@@ -2,8 +2,7 @@ import React from 'react'
 import { makeStyles, List, ListItem, ListItemText, ListItemSecondaryAction, IconButton } from '@material-ui/core';
 import { useSelector, useDispatch } from 'react-redux'
 import { removeItem } from '../store/cart.js'
-import { useContext } from 'react'
-import { ThemeContext } from '../context/ThemeSettings.js'
+// import { ThemeContext } from '../context/ThemeSettings.js'
 
 // Redux Styling for List
 const useStyles = makeStyles(() => ({
@@ -60,7 +59,6 @@ function Cart() {
 }
 
 // const styles = useContext(ThemeContext)
-{/* <List className={classes.list} style={cartVisbilty[styles.showCart} ></List> */}
 // To hide / display cart list
 // const cartVisbilty = {
 //   show: {

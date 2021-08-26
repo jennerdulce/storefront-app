@@ -25,7 +25,6 @@ function Header() {
   //   const visible = styles.showCart === "hidden" ? "show" : "hidden"
   //   styles.setShowList(visible)
   // }
-  {/* <Button data-testid="cart-button" color="inherit" onClick={() => toggleCart()}>Cart ({numOfCartItems})</Button> */ }
 
   return (
     <AppBar style={styles.themeSettings} position="static">
