@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     flexWrap: 'wrap',
     justifyContent: 'space-around',
-    marginBottom: '8rem'
+    marginBottom: '20rem'
   },
   link: {
     textDecoration: 'none'

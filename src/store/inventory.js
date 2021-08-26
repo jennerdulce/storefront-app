@@ -42,10 +42,9 @@ export const changeCategory = (category) => {
 export const addItem = (payload) => async dispatch => {
   // Updates on API
   if (payload.category === 'food') {
-    const response = await axios.put(`https://storefront-db.herokuapp.com/api/v1/food/${payload._id}`, { stock: payload.stock - 1 })
+    await axios.put(`https://storefront-db.herokuapp.com/api/v1/food/${payload._id}`, { stock: payload.stock - 1 })
   } else if (payload.category === 'electronics') {
-    const response = await axios.put(`https://storefront-db.herokuapp.com/api/v1/electronics/${payload._id}`, { stock: payload.stock - 1 })
-    console.log('IT WORKED, ', response.data)
+    await axios.put(`https://storefront-db.herokuapp.com/api/v1/electronics/${payload._id}`, { stock: payload.stock - 1 })
   }
   dispatch(actualAddItem(payload))
 }

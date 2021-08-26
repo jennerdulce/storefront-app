@@ -2,7 +2,7 @@ import { Provider } from 'react-redux'
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Cart from './components/Cart.js'
 import Details from './components/Details.js'
-import Checkout from './components/Checkout.js'
+import CheckoutPage from './components/CheckoutPage.js'
 import Header from './components/Header.js'
 import Footer from './components/Footer.js'
 import ItemCard from './components/Products.js'
@@ -27,7 +27,7 @@ function App() {
             <Details />
           </Route>
           <Route exact path="/checkout">
-            <Checkout />
+            <CheckoutPage />
           </Route>
           <Footer />
         </Provider>
