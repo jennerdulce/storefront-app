@@ -1,4 +1,5 @@
 import React from 'react'
+import { useSelector } from 'react-redux'
 import { Typography, makeStyles, Card, CardActionArea, CardContent, CardMedia, Grid, Button, Accordion, AccordionSummary, AccordionDetails} from '@material-ui/core'
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
@@ -33,10 +34,12 @@ const useStyles = makeStyles(theme => ({
 function Details() {
   // const category = useSelector((state) => state.inventory.currentSort)
   const classes = useStyles()
+  const product = useSelector((state) => state.currentProduct)
+
   return (
     <div className={classes.root}>
       <Typography className={classes.header} variant="h3" gutterBottom>
-        <h3>ITEM NAME</h3>
+        <h3>{product.item}</h3>
         {/* {category.toUpperCase()} */}
       </Typography>
       <Typography className={classes.description} variant="h6" gutterBottom>
@@ -54,8 +57,7 @@ function Details() {
           <CardActionArea>
             <CardMedia
               className={classes.media}
-              image="https://images.unsplash.com/photo-1606787364406-a3cdf06c6d0c?ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1268&q=80"
-              title="Contemplative Reptile"
+              image={`/images/${product.image}`}
             />
             <CardContent>
               <Grid
@@ -65,10 +67,10 @@ function Details() {
                 alignItems="center"
               >
                 <Typography gutterBottom variant="h5" component="h6">
-                  Stock: 9999
+                  Stock: {product.stock}
             </Typography>
                 <Typography gutterBottom variant="h5" component="h6">
-                  $6.99
+                  ${product.cost}
             </Typography>
               </Grid>
             </CardContent>
