@@ -35,17 +35,20 @@ I built this web page to exercise my skills React skills. This webpage was updat
   - React-if
 
 ## Features
-- State Changes
-- User Friendly E-commerce WEbsite
-- Dynamic cards that present specific items chosen
+- State Changes.
+- User Friendly E-commerce Website.
+- Dynamic cards that present specific items chosen.
 
 ## Installation
 
 ### Method 1
 - Clone repository at: https://github.com/jennerdulce/storefront-app
-- Run `git clone https://github.com/jennerdulce/storefront-app.git`
-- Run `npm start`
-- Give a few seconds to allow DB to start up
+- Run `git clone https://github.com/jennerdulce/storefront-app.git`.
+- Run `npm start`.
+- Give a few seconds to allow DB to start up.
+
+### Method 2
+- Visit the live link at the top of this page.
 
 ## API Reference
 - [Material.UI](https://material-ui.com/)
