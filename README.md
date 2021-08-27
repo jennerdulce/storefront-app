@@ -10,41 +10,45 @@ I built this web page to exercise my skills React skills. This webpage was updat
 ## Screenshots
 
 ### Home Page
-![Home Page](https://j.gifs.com/6WB8KR.gif)
+![Home Page](https://j.gifs.com/46zwBg.gif)
 
-### Home Page
-![Home Page](https://j.gifs.com/6WB8KR.gif)
+### View Details
+![View Details](https://j.gifs.com/LZvDqp.gif)
 
-### Home Page
-![Home Page](https://j.gifs.com/6WB8KR.gif)
+### Add To Cart
+![Add To Cart](https://j.gifs.com/Vv7rEB.gif)
 
-### Home Page
-![Home Page](https://j.gifs.com/6WB8KR.gif)
+### Checkout
+![Checkout](https://j.gifs.com/79pz58.gif)
 
 
 
 ## Tech/framework used
 
 ### Built with
-  - material-ui
-  - msw
-  - axios
-  - react-dom
-  - react-if
-  - react-redux
+  - React
+  - Redux
+  - Material-UI
+  - MSW
+  - Axios
+  - React-route-dom
+  - React-if
 
 ## Features
-- Real-time communication
-- User Login and Authentication
-- Embed Personal Playlist
+- State Changes
+- User Friendly E-commerce WEbsite
+- Dynamic cards that present specific items chosen
 
 ## Installation
 
 ### Method 1
-- Clone repository at: https://github.com/Mass-Melody/Melodi
-- Run `git clone https://github.com/Mass-Melody/Melodi.git`
+- Clone repository at: https://github.com/jennerdulce/storefront-app
+- Run `git clone https://github.com/jennerdulce/storefront-app.git`
 - Run `npm start`
+- Give a few seconds to allow DB to start up
 
 ## API Reference
 - [Material.UI](https://material-ui.com/)
 - [React Redux](https://react-redux.js.org/)
+- [React Router DOM](https://reactrouter.com/web/guides/quick-start)
+- [React If](https://www.npmjs.com/package/react-if)
